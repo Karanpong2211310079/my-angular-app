@@ -1,1 +1,13 @@
-<p>home works!</p>
+<h2>รายชื่อผู้ใช้</h2>
+
+<!-- แสดงข้อความ error ถ้ามี -->
+<div *ngIf="errorMessage" class="error">
+  {{ errorMessage }}
+</div>
+
+<!-- แสดงรายชื่อผู้ใช้ -->
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.id }} - {{ user.name }} ({{ user.email }})
+  </li>
+</ul>

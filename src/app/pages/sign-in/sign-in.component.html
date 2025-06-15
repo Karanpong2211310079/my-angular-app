@@ -1,0 +1,21 @@
+<div>
+    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+        <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
+        <h2 class="text-2xl font-bold text-center mb-6">Sign In</h2>
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input id="email" type="email" formControlName="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+            <div *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched" class="text-red-600 text-sm mt-1">Please enter a valid email.</div>
+            </div>
+            <div class="mb-6">
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <input id="password" type="password" formControlName="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+            <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched" class="text-red-600 text-sm mt-1">Password is required.</div>
+            </div>
+            <button type="submit" [disabled]="signInForm.invalid" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Sign In</button>
+        </form>
+        <p class="mt-4 text-center text-sm text-gray-600">Don't have an account? <a routerLink="/register" class="text-blue-600 hover:underline">Register here</a></p>
+        </div>
+    </div>
+</div>
