@@ -15,7 +15,17 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './components/admin/admin.component';
 
+import { ApplicationConfig } from '@angular/core';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
+import { ButtonModule } from 'primeng/button';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { BadgeModule } from 'primeng/badge';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -28,6 +38,9 @@ import { FormsModule } from '@angular/forms';
     ProjectsComponent,
     ContactComponent,
     SignInComponent,
+    AdminComponent,
+    AdminPanelComponent,
+    
     
     
   ],
@@ -36,9 +49,20 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonModule,
+    PanelMenuModule,
+    BadgeModule,
+    CardModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync(),
+        providePrimeNG({
+            theme: {
+                preset: Aura
+            }
+        })
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

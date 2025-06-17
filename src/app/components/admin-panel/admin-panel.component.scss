@@ -1,0 +1,27 @@
+.row-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+::ng-deep .p-card {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  flex: 1 1 calc(30% - 1rem); // 3 คอลัมน์พอดีๆ บนจอใหญ่
+  min-width: 250px;
+  max-width: 350px;
+}
+
+::ng-deep .p-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+::ng-deep .p-card-content {
+  font-size: 1rem;
+  color: #555;
+}

@@ -12,7 +12,7 @@ export interface User {
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8000/users';
+  private apiUrl = 'http://localhost:8000/polls/staff';
 
 
   constructor(private http: HttpClient) {}
